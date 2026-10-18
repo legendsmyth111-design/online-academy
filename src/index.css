@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0B1F3A;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+
+  /* Urdu typography adjustment */
+  html[lang="ur"] {
+    font-family: 'Noto Nastaliq Urdu', 'Amiri', serif;
+    direction: rtl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1F3A;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B3D6D;
+  border-radius: 4px;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A227;
+}
+
+/* Islamic Geometric Border & Frame */
+.islamic-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(19, 41, 75, 0.9) 0%, rgba(11, 31, 58, 0.95) 100%);
+  border: 1px solid rgba(201, 162, 39, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.islamic-card:hover {
+  border-color: rgba(201, 162, 39, 0.7);
+  box-shadow: 0 15px 35px -5px rgba(201, 162, 39, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Islamic Star Corner Ornament */
+.star-corner::before {
+  content: '✦';
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  color: #C9A227;
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Shimmer Gold Effect */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF0B3 0%, #ECC656 40%, #C9A227 70%, #917114 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-bg {
+  background: linear-gradient(135deg, #ECC656 0%, #C9A227 50%, #B08C1E 100%);
+}
+
+.gold-gradient-border {
+  border-image: linear-gradient(to right, #C9A227, #ECC656, #C9A227) 1;
+}
+
+/* Background Arabesque Pattern */
+.bg-islamic-pattern {
+  background-color: #0B1F3A;
+  background-image: 
+    radial-gradient(rgba(201, 162, 39, 0.07) 1.5px, transparent 1.5px),
+    radial-gradient(rgba(201, 162, 39, 0.04) 1.5px, #0B1F3A 1.5px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
+
+/* Glow Pulses */
+@keyframes softPulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.05); }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 4s infinite ease-in-out;
+}
